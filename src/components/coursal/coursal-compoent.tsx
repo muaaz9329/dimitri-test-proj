@@ -22,7 +22,13 @@ const CourasalComponent = ({data, loading}: Props) => {
   const height = Dimensions.get('window').height;
   data = data.slice(0, 5);
   return (
-    <SkeletonPlaceholder enabled={loading} borderRadius={10}>
+    <SkeletonPlaceholder
+      // highlightColor={colors.secondary}
+      enabled={loading}
+      direction="left"
+      highlightColor={colors.primary}
+      backgroundColor={colors.secondary}
+      borderRadius={10}>
       <Carousel
         loop
         width={width}
