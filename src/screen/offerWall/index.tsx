@@ -9,6 +9,7 @@ import CardContainer from '../../components/card-container/card-container';
 import PopularCards from '../../components/cards/popular-card';
 import colors from '../../utils/colors';
 import {Poppins} from '../../utils/fonts';
+import OfferCard from '../../components/cards/offer-card';
 
 const OfferWall = () => {
   const {data, loading} = useOfferwall();
@@ -29,26 +30,10 @@ const OfferWall = () => {
           }}>
           Offers
         </Text>
-        <Text
-          style={{
-            fontFamily: Poppins(600),
-            fontSize: widthPixel(20),
-            marginBottom: widthPixel(10),
-            color: colors.black,
-          }}>
-          Top Popular
-        </Text>
+        <Text style={styles.titleStyles}>Top Popular</Text>
         <PopularCards data={data as OfferResponse[]} loading={loading} />
-        <Text
-          style={{
-            fontFamily: Poppins(600),
-            fontSize: widthPixel(20),
-            marginBottom: widthPixel(10),
-            color: colors.black,
-            marginTop: widthPixel(20),
-          }}>
-          New Offers
-        </Text>
+        <Text style={styles.titleStyles}>New Offers</Text>
+        <OfferCard data={data as OfferResponse[]} loading={loading} />
       </CardContainer>
     </ScrollView>
   );
@@ -57,9 +42,16 @@ const OfferWall = () => {
 export default OfferWall;
 
 const styles = StyleSheet.create({
+  titleStyles: {
+    fontFamily: Poppins(600),
+    fontSize: widthPixel(18),
+    marginBottom: widthPixel(10),
+    color: colors.textPrimary,
+    marginTop: widthPixel(10),
+  },
   mainContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.secondary,
     flexDirection: 'column',
   },
 });

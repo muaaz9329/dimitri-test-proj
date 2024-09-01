@@ -24,10 +24,9 @@ const CourasalComponent = ({data, loading}: Props) => {
   return (
     <SkeletonPlaceholder
       // highlightColor={colors.secondary}
+      backgroundColor={colors.tertiary}
       enabled={loading}
       direction="left"
-      highlightColor={colors.primary}
-      backgroundColor={colors.secondary}
       borderRadius={10}>
       <Carousel
         loop
@@ -36,7 +35,6 @@ const CourasalComponent = ({data, loading}: Props) => {
         autoPlay={true}
         data={data}
         scrollAnimationDuration={1500}
-        onSnapToItem={index => console.log('current index:', index)}
         renderItem={({item, index}) => (
           <TouchableOpacity
             onPress={() => {

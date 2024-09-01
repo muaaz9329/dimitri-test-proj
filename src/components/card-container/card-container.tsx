@@ -10,7 +10,11 @@ type Props = {
 };
 
 const CardContainer = ({children}: Props) => {
-  return <View style={styles.cardContainer}>{children}</View>;
+  return (
+    <>
+      <View style={styles.cardContainer}>{children}</View>
+    </>
+  );
 };
 
 export default CardContainer;
@@ -25,14 +29,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: widthPixel(20),
     borderTopRightRadius: widthPixel(20),
     backgroundColor: colors.secondary,
-    shadowColor: colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    elevation: 5,
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
+
     paddingVertical: widthPixel(24),
     paddingHorizontal: widthPixel(16),
   },

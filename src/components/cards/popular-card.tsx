@@ -20,7 +20,7 @@ type Props = {
 
 function CardListingSkeleton() {
   return (
-    <SkeletonPlaceholder borderRadius={4}>
+    <SkeletonPlaceholder borderRadius={4} backgroundColor={colors.tertiary}>
       <SkeletonPlaceholder.Item
         flexDirection="row"
         justifyContent="space-between"
@@ -67,8 +67,8 @@ function CardComponent(props: {item: OfferResponse}) {
         />
       </View>
       <Text style={styles.titleStyles}>
-        {props.item.title.length > 10
-          ? props.item.title.slice(0, 10) + '...'
+        {props.item.title.length > 14
+          ? props.item.title.slice(0, 14) + '...'
           : props.item.title}
       </Text>
     </TouchableOpacity>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   },
   titleStyles: {
     fontSize: widthPixel(16),
-    color: colors.black,
+    color: colors.textSecondary,
     fontFamily: Poppins(700),
     textAlign: 'center',
   },
